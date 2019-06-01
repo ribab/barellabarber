@@ -1,0 +1,30 @@
+---
+title: "See The Place"
+id: "see-the-place"
+class: "section"
+---
+<p class="text">
+  <br>
+</p>
+<div class="columns is-centered">
+  <div class="column is-half-desktop is-two-thirds-tablet">
+    <div class="see-the-place">
+      {% for image in site.see_the_place_gallery %}
+        <div>
+          <figure class="image is-4by3">
+            <img src="images/{{ image.src }}"
+                 style="object-fit: cover;">
+          </figure>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function(){
+    $('.see-the-place').slick({
+      autoplay: true,
+    })
+  })
+</script>

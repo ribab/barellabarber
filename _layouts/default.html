@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html class="has-background-dark">
+
+  {% include head.html %}
+
+  <body class="has-background-black">
+
+    {% include navbar.html %}
+
+    {% include intro.html %}
+
+    {% for part in site.parts %}
+      <section class="{{ part.class }}" id="{{ part.id }}">
+        <div class="container as-text-white has-text-weight-light has-text-centered">
+          <p class="title is-1 has-text-white has-text-warning"
+             style="font-family: 'Bookman'">
+            {{ part.title }}
+          </p>
+          {% include title_triangles.html %}
+          {{ part.content }}
+        </div>
+      </section>
+    {% endfor %}
+
+  </body>
+
+</html>

@@ -1,0 +1,48 @@
+<!-- navbar -->
+<nav class="navbar is-fixed-top is-black"
+     role="navigation" aria-label="main navigation"
+     style="background-color: rgba(0,0,0,0)">
+  <div class="navbar-brand">
+    <!-- logo -->
+    <a class="navbar-item" href="#"
+       style="background: url(images/logo_white_on_clear.png) no-repeat center center;
+              background-size: cover;
+              width: 130px;">
+    </a>
+    <!-- burger -->
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="main_menu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <!-- menu -->
+  <div id="main_menu" class="navbar-menu"
+       style="background-color: rgba(0,0,0,0)">
+    <div class="navbar-end">
+      {% for part in site.parts %}
+      <div class="navbar-item has-text-right"
+           style="padding: 10px;
+                  padding-left: 30px;">
+        <a class="subtitle is-4 has-text-white"
+           href="#{{ part.id }}">
+          {{ part.title }}
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</nav>
+
+<script>
+  $(document).ready(function() {
+
+    $(".navbar-burger").click(function() {
+    
+        $(".navbar-burger").toggleClass("is-active");
+        $(".navbar-menu").toggleClass("is-active");
+
+    })
+  
+  })
+</script>
