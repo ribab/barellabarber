@@ -1,11 +1,16 @@
-image: jekyll:/jekyll
+image: ruby:2.6.3
 
 before_script:
-  - ./setup.sh
+  - gem install jekyll
+  - gem install nodejs
+  - npm install bulma
+  - npm install bulma-carousel
+  - rm -rf node_modules/bulma-carousel/src/demo
 
 pages:
   stage: deploy
   script:
+  - sass _sass/main.css css/main.css
   - jekyll build -d public
   artifacts:
     paths:
